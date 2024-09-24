@@ -7,10 +7,8 @@ interface IMainLayout extends HTMLAttributes<HTMLDivElement> {
 const MainLayout: FC<PropsWithChildren<IMainLayout>> = ( { children, className } ) => {
 
     return (
-        <div className='w-full h-full flex flex-col items-center'>
-            <div className={ `max-w-[1400px] min-h-svh w-full ${className}` }>
-                {children}
-            </div>
+        <div className={ `max-w-[1400px] h-full w-full ${className}` }>
+            {children}
         </div>
     );
         
