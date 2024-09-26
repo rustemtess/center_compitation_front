@@ -8,7 +8,7 @@ const Logo = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setShowSvg(prev => !prev);
-        }, 2000);
+        }, 4000);
         return () => clearInterval(interval);
     }, []);
 

@@ -7,7 +7,7 @@ interface IContainerLayout extends HTMLAttributes<HTMLDivElement> {
 const ContainerLayout: FC<PropsWithChildren<IContainerLayout>> = ( { children, className } ) => {
 
     return (
-        <div className={ `w-full h-full min-h-svh flex flex-col items-center ${className}` }>
+        <div className={ `w-full min-h-svh flex flex-col items-center ${className}` }>
             { children }
         </div>
     );

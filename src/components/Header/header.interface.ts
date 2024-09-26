@@ -1,11 +1,5 @@
 import { ComponentType } from "react";
 
-interface VKIcon {
-    width: Number;
-    height: Number;
-    color: string;
-}
-
 export interface IHeader {
     pageId?: Number;
 }
