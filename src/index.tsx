@@ -1,9 +1,11 @@
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from '@/pages/Home';
-import NotFound from './pages/Not-Found/page';
-import ShopPage from './pages/Shop';
 import './index.css';
+import HomePage from '@/pages/Home';
+import NotFound from '@/pages/Not-Found';
+import ShopPage from '@/pages/Shop';
+import TeamPage from '@/pages/Team';
+import '@/utils/i18n';
 
 /**
  * 
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/shop',
     element: <ShopPage />
+  },
+  {
+    path: '/team',
+    element: <TeamPage />
   },
   {
     path: '*',

@@ -8,19 +8,19 @@ import {
 export const HeaderItems: Array<IHeaderItem>  = [
     {
         id: 1,
-        name: 'Главная',
+        name: 'headerHome',
         path: '',
         icon: Icon20HomeOutline
     },
     {
         id: 2,
-        name: 'Магазин',
+        name: 'headerShop',
         path: 'shop',
         icon: Icon20MarketOutline
     },
     {
         id: 3,
-        name: 'Команда',
+        name: 'headerTeam',
         path: 'team',
         icon: Icon20Users3Outline
     }
