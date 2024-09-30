@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { HeaderItems } from "./header.items"; 
 import { FC, useState } from "react";
 import { IHeader } from "./header.interface";
-import { Icon24View } from "@vkontakte/icons";
+import { Icon24View, Icon28Menu, Icon28Cancel } from "@vkontakte/icons";
 import SelectLanguage from "../SelectLanguage";
 import { useTranslation } from "react-i18next";
 import { useMedia } from "use-media";
@@ -77,7 +77,10 @@ const Header: FC<IHeader> = ( { pageId } ) => {
             <div className='flex max-w-[1400px] w-full justify-between p-3 items-center'>
                 <Logo />
                 { !isMobile && <HeaderPCMenu /> }
-                { isMobile && <button onClick={() => setShowMenu(!showMenu)}>Click</button> }
+                { isMobile && <button onClick={() => setShowMenu(!showMenu)}>
+                    { !showMenu && <Icon28Menu color='rgb(31,41,55)' /> }
+                    { showMenu && <Icon28Cancel color='rgb(31,41,55)' /> }
+                </button> }
             </div>
             { (showMenu && isMobile ) && <HeaderMobileMenu /> }
         </HeaderLayout>
