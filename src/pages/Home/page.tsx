@@ -55,7 +55,7 @@ const HomePage = () => {
                 <div className='w-full flex justify-center items-center p-1 gap-8 flex-wrap'>
                     <div className='w-full max-w-[800px] flex flex-col gap-4'>
                         <h1 className='text-4xl font-semibold text-gray-700'>О проекте</h1>
-                        <p className='text-base flex flex-col gap-2'>
+                        <p className='text-xl flex flex-col gap-2'>
                             <span>Грантодатель — <b>АО «Фонд науки»</b></span>
                             <span>Заявитель и грантополучатель — <b>НАО «Восточно-Казахстанский университет имени Сарсена Аманжолова»</b></span>
                             <span>Частный партнер — <b>ОО «Центр реабилитации и коррекции DEMEY»</b></span>
