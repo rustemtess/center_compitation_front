@@ -2,22 +2,24 @@ import { FC, useState } from "react";
 import { Langugages } from "./language.type";
 import { useTranslation } from "react-i18next";
 import { ISelectLanguage } from "./selectlanguage.interface";
+import { Icon20HieroglyphCharacterOutline } from '@vkontakte/icons';
+
+export const getCurrentLangKey = (lang: Langugages) => {
+    return Object
+            .keys(Langugages)
+            .find( 
+                key => Object(Langugages)[key] === lang
+            );
+}
 
 const SelectLanguage: FC<ISelectLanguage> = ( { isMobile = false } ) => {
 
     const [isShowLanguagePane, setShowLanguagePane] = useState<boolean>(false);
     const { i18n } = useTranslation();
 
-    const getCurrentLangKey = (lang: Langugages) => {
-        return Object
-                .keys(Langugages)
-                .find( 
-                    key => Object(Langugages)[key] === lang
-                );
-    }
-
     const changeLanguage = (lang: Langugages): void => {
         i18n.changeLanguage(getCurrentLangKey(lang));
+        localStorage.setItem('lang', Langugages[getCurrentLangKey(lang) as Langugages]);
     };
 
     const LanguagePane = () => {
@@ -38,9 +40,9 @@ const SelectLanguage: FC<ISelectLanguage> = ( { isMobile = false } ) => {
 
     return (
         <div className='relative'>
-            <button className='hover:text-blue-600' onClick={
+            <button className='hover:text-blue-600 flex gap-1 items-center' onClick={
                 () => setShowLanguagePane(prev => !prev)
-            }>{
+            }><Icon20HieroglyphCharacterOutline />{
                 i18n.language
               }</button>
             { isShowLanguagePane && <LanguagePane /> }

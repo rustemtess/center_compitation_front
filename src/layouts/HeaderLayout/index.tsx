@@ -7,7 +7,7 @@ interface IHeaderLayout extends HTMLAttributes<HTMLDivElement> {
 const HeaderLayout: FC<PropsWithChildren<IHeaderLayout>> = ( { children, className } ) => {
 
     return (
-        <header className={ `z-50 sticky top-0 w-full flex justify-center ${className}` }>
+        <header className={ `z-50 sticky top-0 w-full flex flex-col justify-center items-center ${className}` }>
             {children}
         </header>
     );
