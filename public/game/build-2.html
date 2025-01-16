@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', { g9: 1, g8: 4, g5: 2, g1: 1});
+    addElements('rightside', { g5: 1, g4: 4, g3: 2, g1: 1 });
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script type="text/javascript">
+        function applyTargetStyles(target) {
+            const id = target.id;
+            const secondChar = id.charAt(1);
+            const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+            if (id.startsWith('g')) { 
+                target.style.border = '1px dashed #CBC7BF';
+                target.style.borderRadius = '10px';
+                target.style.width = 50 * multiplier + 'px'; 
+                target.style.height = '50px'; // Фиксированная высота
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            } else if (id.startsWith('v')) {
+                target.style.border = '1px dashed #CBC7BF'; // Пример рамки
+                target.style.borderRadius = '10px';
+                target.style.width = '50px'; // Фиксированная ширина
+                target.style.height = 50 * multiplier + 'px'; // Высота для вертикальных элементов
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+        }
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <footer>
+        <button onclick="location.href='index.html';" id="home"></button>
+        <button onclick="checkElements(event)" id="play"></button>
+    </footer>
+
+    <aside id="leftside"></aside>
+
+    <main>
+        <content style="width:450px; height: 450px;">
+            <div class="target" id="g9" style="bottom: 0;"></div>
+            <div class="target" id="g8" style="left: 25px; bottom: 60px;"></div>
+            <div class="target" id="g8" style="left: 25px; bottom: 120px;"></div>
+            <div class="target" id="g8" style="left: 25px; bottom: 180px;"></div>
+            <div class="target" id="g8" style="left: 25px; bottom: 240px;"></div>
+            <div class="target" id="g5" style="transform: rotate(-20deg); top: 80px; left: -30px;"></div>
+            <div class="target" id="g5" style="transform: rotate(20deg); top: 80px; right: -30px;"></div>
+            <div class="target" id="g1" style="left: 200px; top: -10px;"></div>
+        </content>
+
+        <content style="width:250px; height: 440px;">
+            <div class="target" id="g5" style="bottom: 0;"></div>
+            <div class="target" id="g4" style="left: 25px; bottom: 60px;"></div>
+            <div class="target" id="g4" style="left: 25px; bottom: 120px;"></div>
+            <div class="target" id="g4" style="left: 25px; bottom: 180px;"></div>
+            <div class="target" id="g4" style="left: 25px; bottom: 240px;"></div>
+            <div class="target" id="g3" style="transform: rotate(-20deg); top: 80px; left: -30px;"></div>
+            <div class="target" id="g3" style="transform: rotate(20deg); top: 80px; right: -30px;"></div>
+            <div class="target" id="g1" style="left: 100px; top: 10px;"></div>
+        </content>
+        <p>Таяқшалардан үйлерді<br>құрастырып, түстерді ата.</p>
+    </main>
+
+    <aside id="rightside"></aside>
+
+    <script src="js/position.js"></script>
+</body>
+</html>

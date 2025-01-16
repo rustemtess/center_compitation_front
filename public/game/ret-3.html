@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', { v2:3, v3:3, v4:2, v5:2, v6:2});
+    addElements('rightside', { v2:3, v3:3, v4:2, v5:2, v6:2});
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script type="text/javascript">
+function applyTargetStyles(target) {
+    const id = target.id;
+    const secondChar = id.charAt(1);
+    const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+    if (id.startsWith('m')) { 
+        target.style.border = '1px dashed #CBC7BF';
+        target.style.borderRadius = '10px';
+        target.style.width = '100px'; // Фиксированная ширина
+        target.style.height = '100px'; // Фиксированная высота
+        target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+    }
+
+    if (id.startsWith('a')) { 
+        target.style.border = '1px dashed #CBC7BF';
+        target.style.borderRadius = '10px';
+        target.style.width = '100px'; // Фиксированная ширина
+        target.style.height = '100px'; // Фиксированная высота
+        target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+    }
+
+    if (id.startsWith('p')) { 
+        target.style.border = '1px dashed #CBC7BF';
+        target.style.borderRadius = '10px';
+        target.style.width = '100px'; // Фиксированная ширина
+        target.style.height = '100px'; // Фиксированная высота
+        target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+    }
+
+            if (id.startsWith('g')) { 
+                target.style.border = '1px dashed #CBC7BF';
+                target.style.borderRadius = '10px';
+                target.style.width = 50 * multiplier + 'px'; 
+                target.style.height = '50px'; // Фиксированная высота
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+
+            if (id.startsWith('v')) {
+                target.style.border = '1px dashed #CBC7BF'; // Пример рамки
+                target.style.borderRadius = '10px';
+                target.style.width = '50px'; // Фиксированная ширина
+                target.style.height = 50 * multiplier + 'px'; // Высота для вертикальных элементов
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+}
+    </script>
+
+    <script type="text/javascript">
+function applyFtargetStyles(target) {
+    const id = target.id;
+    const secondChar = id.charAt(1);
+    const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+    if (target.classList.contains('ftarget')) {
+        target.style.border = '1px dashed #CBC7BF';
+        target.style.borderRadius = '10px';
+        target.style.width = '50px'; // Фиксированная ширина
+        target.style.height = 50 * multiplier + 'px';
+        target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+        target.style.backgroundImage = `url(elements/${id.slice(0, 2)}.svg)`;
+    }
+}
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <footer>
+        <button onclick="playSoundAndExecute(function() { location.href='index.html'; })" id="home"></button>
+        <button onclick="checkElements(event)" id="play"></button>
+    </footer>
+
+    <aside id="leftside"></aside>
+
+    <main>
+        <content style="width:1260px; height: 550px;">
+            <div style="display: flex; align-items: flex-end; height: 150px; margin-top: 40px;">
+            <div class="ftarget" id="v2"></div>
+            <div class="ftarget" id="v3" style="left:70px"></div>
+            <div class="ftarget" id="v2" style="left:140px"></div>
+            <div class="ftarget" id="v3" style="left:210px"></div>
+            <div class="ftarget" id="v2" style="left:280px"></div>
+            <div class="ftarget" id="v3" style="left:360px"></div>
+            <div class="target" id="v2" style="left:420px"></div>
+            <div class="target" id="v3" style="left:490px"></div>
+            <div class="target" id="v2" style="left:560px"></div>
+            <div class="target" id="v3" style="left:630px"></div>
+            <div class="target" id="v2" style="left:700px"></div>
+            <div class="target" id="v3" style="left:770px"></div>
+            <div class="target" id="v2" style="left:840px"></div>
+            <div class="target" id="v3" style="left:930px"></div>
+            <div class="target" id="v2" style="left:1000px"></div>
+            <div class="target" id="v3" style="left:1070px"></div>
+            <div class="target" id="v2" style="left:1140px"></div>
+            <div class="target" id="v3" style="left:1210px"></div>
+            </div>
+
+            <div style="display: flex; align-items: flex-end; height: 300px; margin-top: 40px;">
+            <div class="ftarget" id="v4"></div>
+            <div class="ftarget" id="v5" style="left:70px"></div>
+            <div class="ftarget" id="v6" style="left:140px"></div>
+            <div class="ftarget" id="v4" style="left:210px"></div>
+            <div class="ftarget" id="v5" style="left:280px"></div>
+            <div class="ftarget" id="v6" style="left:360px"></div>
+            <div class="target" id="v4" style="left:420px"></div>
+            <div class="target" id="v5" style="left:490px"></div>
+            <div class="target" id="v6" style="left:560px"></div>
+            <div class="target" id="v4" style="left:630px"></div>
+            <div class="target" id="v5" style="left:700px"></div>
+            <div class="target" id="v6" style="left:770px"></div>
+            <div class="target" id="v4" style="left:840px"></div>
+            <div class="target" id="v5" style="left:930px"></div>
+            <div class="target" id="v6" style="left:1000px"></div>
+            <div class="target" id="v4" style="left:1070px"></div>
+            <div class="target" id="v5" style="left:1140px"></div>
+            <div class="target" id="v6" style="left:1210px"></div>
+            </div>
+        </content>
+
+        <p>Таяқшалардан орындықты<br>құрастырып, түстерді ата.</p>
+    </main>
+
+    <aside id="rightside"></aside>
+    <script>
+        // Применяем стили ко всем элементам с классом 'ftarget'
+        const ftargetElements = document.querySelectorAll('.ftarget');
+        ftargetElements.forEach(function(ftargetElement) {
+            applyFtargetStyles(ftargetElement);
+        });
+    </script>
+    <script src="js/position.js"></script>
+</body>
+</html>

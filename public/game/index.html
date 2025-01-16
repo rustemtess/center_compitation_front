@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', { v1: 3, v3: 3, v5: 2, v7: 3, v9: 1});
+    addElements('rightside', { v2: 3, v4: 2, v6: 3, v8: 2, v0: 0});
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <aside id="leftside"></aside>
+
+<main style="height: 100%;">
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" onclick="toggleAccordion(this)">Құрастыру</h2>
+            <div class="accordion-content">
+                <a href="build-1.html">Орындыктар</a>
+                <br>
+                <a href="build-2.html">Үйлер</a>
+                <br>
+                <a href="build-3.html">Пирамида</a>
+                <br>
+                <a href="build-4.html">Қолдар</a>
+                <br>
+                <a href="build-5.html">Баспалдақ</a>
+                <br>
+                <a href="build-6.html">Ыдыс</a>
+                <br>
+                <a href="build-7.html">Үстел</a>
+                <br>
+                <a href="build-8.html">Сөре</a>
+                <br>
+                <a href="build-9.html">Сарай</a>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" onclick="toggleAccordion(this)">Ретті сақтау</h2>
+            <div class="accordion-content">
+                <a href="match-1.html">Реттегі орнын табу</a><br>
+                <a href="match-2.html">Реттегі орнын табу</a><br>
+                <a href="match-3.html">Реттегі орнын табу</a><br>
+                <a href="match-4.html">Реттегі орнын табу</a><br>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" onclick="toggleAccordion(this)">Арифметика</h2>
+            <div class="accordion-content">
+                <a href="match-a-1.html">Арифметика</a><br>
+                <a href="match-a-2.html">Арифметика</a><br>
+                <a href="match-a-3.html">Арифметика</a><br>
+                <a href="match-a-4.html">Арифметика</a><br>
+                <a href="match-a-5.html">Арифметика</a><br>
+                <a href="match-a-6.html">Арифметика</a><br>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" onclick="toggleAccordion(this)">Домик</h2>
+            <div class="accordion-content">
+                <a href="dom-1.html">Домик</a><br>
+                <a href="dom-2.html">Домик</a><br>
+                <a href="dom-3.html">Домик</a><br>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+    <aside id="rightside"></aside>
+    <script>
+        // Применяем стили ко всем элементам с классом 'ftarget'
+        const ftargetElements = document.querySelectorAll('.ftarget');
+        ftargetElements.forEach(function(ftargetElement) {
+            applyFtargetStyles(ftargetElement);
+        });
+    </script>
+    <script src="js/position.js"></script>
+</body>
+</html>

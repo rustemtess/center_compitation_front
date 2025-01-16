@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', {g6: 1, v0:1, v3:2, v4:2, g8: 1});
+    addElements('rightside', { v0:1, v3:2, v4:2, g8: 1});
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script type="text/javascript">
+        function applyTargetStyles(target) {
+            const id = target.id;
+            const secondChar = id.charAt(1);
+            const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+            if (id.startsWith('g')) { 
+                target.style.border = '1px dashed #CBC7BF';
+                target.style.borderRadius = '10px';
+                target.style.width = 50 * multiplier + 'px'; 
+                target.style.height = '50px'; // Фиксированная высота
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            } else if (id.startsWith('v')) {
+                target.style.border = '1px dashed #CBC7BF'; // Пример рамки
+                target.style.borderRadius = '10px';
+                target.style.width = '50px'; // Фиксированная ширина
+                target.style.height = 50 * multiplier + 'px'; // Высота для вертикальных элементов
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+        }
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <footer>
+        <button onclick="location.href='index.html';" id="home"></button>
+        <button onclick="checkElements(event)" id="play"></button>
+    </footer>
+
+    <aside id="leftside"></aside>
+
+    <main>
+        <content style="width:400px; height: 550px; top: -20px;">
+        <div class="target" id="g8" style="left:0px; top:0px;"></div>
+        <div class="target" id="g8" style="left:0px; top:550px;"></div>
+        <div class="target" id="g6" style="left:50px; top:250px;"></div>
+        <div class="target" id="v0" style="left:0px; top:50px;"></div>
+        <div class="target" id="v0" style="right:0px; top:50px;"></div>
+
+        <div class="target" id="v3" style="left:85px; top:100px;"></div>
+        <div class="target" id="v3" style="left:145px; top:100px;"></div>
+        <div class="target" id="v3" style="left:205px; top:100px;"></div>
+        <div class="target" id="v3" style="left:265px; top:100px;"></div>
+
+        <div class="target" id="v4" style=" left:85px; top:350px;"></div>
+        <div class="target" id="v4" style="left:145px; top:350px;"></div>
+        <div class="target" id="v4" style="left:205px; top:350px;"></div>
+        <div class="target" id="v4" style="left:265px; top:350px;"></div>
+        </content>
+        <p>Шкафтың жоғары сөресіне қызыл,<br>ал төменгі сөресіне сары кітаптарды қой.</p>
+    </main>
+
+    <aside id="rightside"></aside>
+
+    <script src="js/position.js"></script>
+</body>
+</html>

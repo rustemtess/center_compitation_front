@@ -6,3 +6,7 @@ export interface INews {
     news_lang: string,
     created_at: string
 };
+
+export interface IAllNews {
+    all?: boolean
+}

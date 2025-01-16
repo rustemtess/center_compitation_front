@@ -5,6 +5,7 @@ export interface IProduct {
     product_description: string,
     product_kit: string,
     product_services: string,
+    product_video_url: string,
     product_price: number,
     product_img: string,
     product_vendor_number: string,

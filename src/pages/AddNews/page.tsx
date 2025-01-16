@@ -59,7 +59,7 @@ const AddNewsPage = () => {
                     </div>
                     <div className='flex flex-col gap-2'>
                         <span className='text-gray-500 text-sm'>Загрузите картинку</span>
-                        <input type='file' className='outline-none border p-2' />
+                        <input type='file' className='outline-none border p-2' accept='image/*' />
                     </div>
                     <div className='flex flex-col gap-2'>
                         <span className='text-gray-500 text-sm'>Выберите язык</span>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', { g0: 1, v2: 2, v4: 1});
+    addElements('rightside', { v2: 2, v4: 1});
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script type="text/javascript">
+        function applyTargetStyles(target) {
+            const id = target.id;
+            const secondChar = id.charAt(1);
+            const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+            if (id.startsWith('g')) { 
+                target.style.border = '1px dashed #CBC7BF';
+                target.style.borderRadius = '10px';
+                target.style.width = 50 * multiplier + 'px'; 
+                target.style.height = '50px'; // Фиксированная высота
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            } else if (id.startsWith('v')) {
+                target.style.border = '1px dashed #CBC7BF'; // Пример рамки
+                target.style.borderRadius = '10px';
+                target.style.width = '50px'; // Фиксированная ширина
+                target.style.height = 50 * multiplier + 'px'; // Высота для вертикальных элементов
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+        }
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <footer>
+        <button onclick="location.href='index.html';" id="home"></button>
+        <button onclick="checkElements(event)" id="play"></button>
+    </footer>
+
+    <aside id="leftside"></aside>
+
+    <main>
+        <content style="width:500px; height: 330px;">
+        <div class="target" id="g0" style="left:0px; top: 100px;"></div>
+        <div class="target" id="v2" style="left:185px; top:0px;"></div>
+        <div class="target" id="v2" style="left:265px; top:0px;"></div>
+        <div class="target" id="v4" style="left:50px; top:150px;"></div>
+        <div class="target" id="v4" style="left:400px; top:150px;"></div>
+        <div class="target" id="v2" style="left:185px; top:250px;"></div>
+        <div class="target" id="v2" style="left:265px; top:250px;"></div>
+        </content>
+        <p>Таяқшалардан үстелді<br>құрастырып, түстерді ата.</p>
+    </main>
+
+    <aside id="rightside"></aside>
+
+    <script src="js/position.js"></script>
+</body>
+</html>

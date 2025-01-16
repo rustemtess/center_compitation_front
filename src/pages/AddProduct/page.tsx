@@ -17,6 +17,7 @@ const AddProductPage = () => {
     const [price, setPrice] = useState<string>('0');
     const [number, setNumber] = useState<string>('+7');
     const [lang, setLang] = useState<string>('ru');
+    const [videoUrl, setVideoUrl] = useState<string>('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -28,8 +29,11 @@ const AddProductPage = () => {
         const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
     
         if (fileInput && fileInput.files && fileInput.files.length > 0) {
-            formData.append('file', fileInput.files[0]); // 'file' — ключ для файла на сервере
+            for (let i = 0; i < fileInput.files.length; i++) {
+                formData.append('files[]', fileInput.files[i]); // 'files[]' is the key for multiple files
+            }
         }
+        
         formData.append('type', 'product');
         formData.append('method', 'add');
         formData.append('title', title);
@@ -37,9 +41,11 @@ const AddProductPage = () => {
         formData.append('description', formatTextWithParagraphs(description));
         formData.append('kit', formatTextWithParagraphs(kit));
         formData.append('services', formatTextWithParagraphs(services));
+        formData.append('video-url', videoUrl);
         formData.append('price', price);
         formData.append('number', number);
         formData.append('lang', lang);
+        
         fetch('https://center-competence.choices.kz/api/', {
             method: 'POST',
             body: formData
@@ -80,12 +86,16 @@ const AddProductPage = () => {
                         <textarea onChange={(e) => setServices(e.target.value)} className='outline-none border p-2'></textarea>
                     </div>
                     <div className='flex flex-col gap-2'>
+                        <span className='text-gray-500 text-sm'>Вставьте ссылку на видео Youtube</span>
+                        <input onChange={(e) => setVideoUrl(e.target.value)} className='outline-none border p-2' />
+                    </div>
+                    <div className='flex flex-col gap-2'>
                         <span className='text-gray-500 text-sm'>Введите цену товара <span className='text-gray-400 italic'>(По желанию)</span></span>
                         <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} className='outline-none border p-2' />
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-gray-500 text-sm'>Загрузите картинку товара</span>
-                        <input type='file' className='outline-none border p-2' />
+                        <span className='text-gray-500 text-sm'>Загрузите картинки товара</span>
+                        <input type='file' multiple className='outline-none border p-2' accept='image/*' />
                     </div>
                     <div className='flex flex-col gap-2'>
                         <span className='text-gray-500 text-sm'>Введите телефон номер продавца</span>

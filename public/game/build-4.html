@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Bala</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/elements.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Пример вызова функции
+    addElements('leftside', { v1: 3, v2: 1, v3: 1, v4: 1, v5: 1, v6: 1});
+    addElements('rightside', { v1: 3, v2: 1, v3: 1, v4: 1, v5: 1, v6: 1});
+
+    // Применяем стили ко всем элементам с классом 'target'
+    const targetElements = document.querySelectorAll('.target');
+    targetElements.forEach(function(targetElement) {
+        applyTargetStyles(targetElement);
+    });
+});
+
+    </script>
+    <script type="text/javascript">
+        function applyTargetStyles(target) {
+            const id = target.id;
+            const secondChar = id.charAt(1);
+            const multiplier = secondChar === '0' ? 10 : parseInt(secondChar, 10);
+
+            if (id.startsWith('g')) { 
+                target.style.border = '1px dashed #CBC7BF';
+                target.style.borderRadius = '10px';
+                target.style.width = 50 * multiplier + 'px'; 
+                target.style.height = '50px'; // Фиксированная высота
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            } else if (id.startsWith('v')) {
+                target.style.border = '1px dashed #CBC7BF'; // Пример рамки
+                target.style.borderRadius = '10px';
+                target.style.width = '50px'; // Фиксированная ширина
+                target.style.height = 50 * multiplier + 'px'; // Высота для вертикальных элементов
+                target.style.position = 'absolute'; // Убедитесь, что позиционирование установлено
+            }
+        }
+    </script>
+    <script src="js/generator.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <footer>
+        <button onclick="location.href='index.html';" id="home"></button>
+        <button onclick="checkElements(event)" id="play"></button>
+    </footer>
+
+    <aside id="leftside"></aside>
+
+    <main>
+        <content style="width:300px; height: 530px;">
+        <div class="target" id="v2" style="left:0px; top: 260px; transform: rotate(-40deg);"></div>
+        <div class="target" id="v3" style="left:35px; top: 170px; transform: rotate(-30deg);"></div>
+        <div class="target" id="v5" style="left:90px; top: 65px; transform: rotate(-20deg);"></div>
+        <div class="target" id="v4" style="left:170px; top: 75px; transform: rotate(-5deg);"></div>
+        <div class="target" id="v6" style="left:250px; top: 145px; transform: rotate(15deg);"></div>
+
+        <div class="target" id="v1" style="left:60px; top: 350px; transform: rotate(45deg);"></div>
+        <div class="target" id="v1" style="left:115px; top: 395px; transform: rotate(40deg);"></div>
+        <div class="target" id="v1" style="left:145px; top: 325px; transform: rotate(70deg);"></div>
+        </content>
+
+        <content style="width:300px; height: 530px;">
+        <div class="target" id="v2" style="height:100px; right:0px; top: 260px; transform: rotate(+40deg);"></div>
+        <div class="target" id="v3" style="height:150px; right:35px; top: 170px; transform: rotate(+30deg);"></div>
+        <div class="target" id="v5" style="height:250px; right:90px; top: 65px; transform: rotate(+20deg);"></div>
+        <div class="target" id="v4" style="height:200px; right:170px; top: 75px; transform: rotate(+5deg);"></div>
+        <div class="target" id="v6" style="height:300px; right:250px; top: 145px; transform: rotate(-15deg);"></div>
+
+        <div class="target" id="v1" style="right:60px; top: 350px; transform: rotate(-45deg);"></div>
+        <div class="target" id="v1" style="right:115px; top: 395px; transform: rotate(-40deg);"></div>
+        <div class="target" id="v1" style="right:145px; top: 325px; transform: rotate(-70deg);"></div>
+        </content>
+        <p>Таяқшалардан қолдарды<br>құрастырып, түстерді ата.</p>
+    </main>
+
+    <aside id="rightside"></aside>
+
+    <script src="js/position.js"></script>
+</body>
+</html>
